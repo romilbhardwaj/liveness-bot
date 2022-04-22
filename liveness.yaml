@@ -17,4 +17,4 @@ setup: |
 
 run: |
   cd liveness-bot
-  python main.py --path /spotdata/p32xlarge.txt --prefix $HOSTNAME --frequency 60
+  python -u main.py --path /spotdata/p32xlarge.txt --prefix $HOSTNAME --frequency 60
