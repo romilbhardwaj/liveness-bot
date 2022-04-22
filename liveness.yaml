@@ -1,0 +1,20 @@
+name: liveness
+
+resources:
+  cloud: aws
+  instance_type: p3.2xlarge
+  use_spot: true
+
+
+file_mounts:
+  /spotdata/:
+    name: romil-spotdata
+    mode: MOUNT
+
+setup: |
+  rm -rf liveness-bot
+  git clone https://github.com/romilbhardwaj/liveness-bot.git
+
+run: |
+  cd liveness-bot
+  python main.py --path /spotdata/p32xlarge.txt --prefix $HOSTNAME --frequency 60

@@ -17,7 +17,7 @@ def parse_args():
 def main():
     args = parse_args()
     while True:
-        with open(args.path, 'a+') as f:
+        with open(args.path, 'w') as f:
             write_str = args.prefix + ' ' + str(time.time())
             print("Writing to file: {}".format(write_str))
             f.write(write_str)
